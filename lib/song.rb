@@ -30,7 +30,6 @@ class Song
     #return array; no duplicates!
   end
 
-  def self.genre_count
     def self.genre_count
       genre_count = {}
       @@genres.each do |genre|
