@@ -5,8 +5,7 @@ class Song
 @@count = 0
 @@artists = []
 @@genres = []
-# @@genre_count = {}
-# @@artist_count = {}
+
 
   def initialize(name, artist, genre)
     @name = name
@@ -32,12 +31,16 @@ class Song
   end
 
   def self.genre_count
-    #Each genre name key should point to a value that is the number of songs that have that genre
-    #You will need to iterate over the @@genres array and populate a hash with the key/value pairs. You will
-    # need to check to see if the hash already contains a key of a
-    # particular genre. If so, increment the value of that key by one, otherwise,
-    # create a new key/value pair
-    @@genre_count.uniq {|genre, count|}
+    def self.genre_count
+      genre_count = {}
+      @@genres.each do |genre|
+        if genre_count[genre] = 1
+          genre_count[genre] += 1
+        else
+          genre_count[genre] = 1
+      end
+    end
+        genre_count
   end
 
   def self.artist_count
